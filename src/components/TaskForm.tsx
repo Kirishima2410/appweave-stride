@@ -18,6 +18,7 @@ export function TaskForm({ onSubmit, loading }: TaskFormProps) {
     description: '',
     priority: 'medium',
     due_date: '',
+    category: '',
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -29,12 +30,14 @@ export function TaskForm({ onSubmit, loading }: TaskFormProps) {
         ...formData,
         description: formData.description || undefined,
         due_date: formData.due_date || undefined,
+        category: formData.category || undefined,
       });
       setFormData({
         title: '',
         description: '',
         priority: 'medium',
         due_date: '',
+        category: '',
       });
     } catch (error) {
       // Error is handled in the hook
@@ -42,9 +45,9 @@ export function TaskForm({ onSubmit, loading }: TaskFormProps) {
   };
 
   return (
-    <Card>
+    <Card className="sticky top-4">
       <CardHeader>
-        <CardTitle>Add New Task</CardTitle>
+        <CardTitle className="text-lg sm:text-xl">Add New Task</CardTitle>
       </CardHeader>
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -70,7 +73,17 @@ export function TaskForm({ onSubmit, loading }: TaskFormProps) {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
+          <div className="space-y-2">
+            <Label htmlFor="category">Category</Label>
+            <Input
+              id="category"
+              value={formData.category}
+              onChange={(e) => setFormData(prev => ({ ...prev, category: e.target.value }))}
+              placeholder="Enter task category (optional)"
+            />
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="space-y-2">
               <Label>Priority</Label>
               <Select
@@ -91,12 +104,13 @@ export function TaskForm({ onSubmit, loading }: TaskFormProps) {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="due_date">Due Date</Label>
+              <Label htmlFor="due_date">Due Date & Time</Label>
               <Input
                 id="due_date"
                 type="datetime-local"
                 value={formData.due_date}
                 onChange={(e) => setFormData(prev => ({ ...prev, due_date: e.target.value }))}
+                className="w-full"
               />
             </div>
           </div>

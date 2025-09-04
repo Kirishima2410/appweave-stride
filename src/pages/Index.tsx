@@ -59,12 +59,12 @@ const Index = () => {
           </p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-1">
+        <div className="grid gap-6 lg:gap-8 xl:grid-cols-4">
+          <div className="xl:col-span-1">
             <TaskForm onSubmit={createTask} />
           </div>
           
-          <div className="lg:col-span-2">
+          <div className="xl:col-span-3">
             <TaskList
               tasks={tasks}
               onUpdate={updateTask}

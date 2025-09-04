@@ -9,6 +9,7 @@ export interface Task {
   completed: boolean;
   priority: string;
   due_date: string | null;
+  category: string | null;
   created_at: string;
   updated_at: string;
   user_id: string;
@@ -19,6 +20,7 @@ export interface CreateTaskData {
   description?: string;
   priority?: string;
   due_date?: string;
+  category?: string;
 }
 
 export interface UpdateTaskData {
@@ -27,6 +29,7 @@ export interface UpdateTaskData {
   completed?: boolean;
   priority?: string;
   due_date?: string;
+  category?: string;
 }
 
 export function useTasks() {
