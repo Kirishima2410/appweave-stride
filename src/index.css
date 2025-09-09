@@ -4,20 +4,20 @@
 
 @layer base {
   :root {
-    /* Light theme - secondary */
-    --background: 249 250 251;
+    /* Light theme */
+    --background: 255 255 255;
     --foreground: 15 23 42;
-    --card: 255 255 255;
+    --card: 248 250 252;
     --card-foreground: 15 23 42;
     --popover: 255 255 255;
     --popover-foreground: 15 23 42;
-    --primary: 124 58 237;
+    --primary: 99 102 241;
     --primary-foreground: 255 255 255;
     --secondary: 241 245 249;
     --secondary-foreground: 15 23 42;
     --muted: 248 250 252;
     --muted-foreground: 100 116 139;
-    --accent: 59 130 246;
+    --accent: 6 182 212;
     --accent-foreground: 255 255 255;
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
@@ -25,40 +25,66 @@
     --warning: 245 158 11;
     --border: 226 232 240;
     --input: 226 232 240;
-    --ring: 124 58 237;
+    --ring: 99 102 241;
     --radius: 0.75rem;
 
+    /* Enhanced color system */
+    --bg-primary: 255 255 255;
+    --bg-secondary: 248 250 252;
+    --bg-tertiary: 241 245 249;
+    --bg-accent: 226 232 240;
+    
+    --text-primary: 15 23 42;
+    --text-secondary: 51 65 85;
+    --text-tertiary: 100 116 139;
+    --text-muted: 148 163 184;
+
     /* Priority colors */
-    --priority-high: 239 68 68;
-    --priority-medium: 245 158 11;
-    --priority-low: 16 185 129;
+    --priority-high: 255 71 87;
+    --priority-high-bg: 255 71 87 / 0.1;
+    --priority-medium: 255 167 38;
+    --priority-medium-bg: 255 167 38 / 0.1;
+    --priority-low: 102 187 106;
+    --priority-low-bg: 102 187 106 / 0.1;
+
+    /* Category colors */
+    --category-work: 139 92 246;
+    --category-personal: 6 182 212;
+    --category-health: 16 185 129;
+    --category-finance: 245 158 11;
+    --category-learning: 59 130 246;
+    --category-social: 236 72 153;
+
+    /* Glass morphism */
+    --glass-bg: 255 255 255 / 0.7;
+    --glass-border: 0 0 0 / 0.1;
 
     /* Sidebar colors */
     --sidebar-background: 255 255 255;
     --sidebar-foreground: 71 85 105;
-    --sidebar-primary: 124 58 237;
+    --sidebar-primary: 99 102 241;
     --sidebar-primary-foreground: 255 255 255;
     --sidebar-accent: 241 245 249;
     --sidebar-accent-foreground: 15 23 42;
     --sidebar-border: 226 232 240;
-    --sidebar-ring: 124 58 237;
+    --sidebar-ring: 99 102 241;
   }
 
   .dark {
-    /* Dark theme - primary (default) */
-    --background: 15 15 35;
+    /* Enhanced dark theme */
+    --background: 10 10 15;
     --foreground: 248 250 252;
-    --card: 22 26 46;
+    --card: 21 21 32;
     --card-foreground: 248 250 252;
-    --popover: 30 30 54;
+    --popover: 30 30 46;
     --popover-foreground: 248 250 252;
-    --primary: 124 58 237;
+    --primary: 99 102 241;
     --primary-foreground: 255 255 255;
-    --secondary: 30 30 54;
+    --secondary: 30 30 46;
     --secondary-foreground: 203 213 225;
     --muted: 26 30 50;
     --muted-foreground: 148 163 184;
-    --accent: 59 130 246;
+    --accent: 6 182 212;
     --accent-foreground: 255 255 255;
     --destructive: 239 68 68;
     --destructive-foreground: 255 255 255;
@@ -66,22 +92,48 @@
     --warning: 245 158 11;
     --border: 30 41 59;
     --input: 30 41 59;
-    --ring: 124 58 237;
+    --ring: 99 102 241;
 
-    /* Priority colors - same for both themes */
-    --priority-high: 239 68 68;
-    --priority-medium: 245 158 11;
-    --priority-low: 16 185 129;
+    /* Enhanced dark color system */
+    --bg-primary: 10 10 15;
+    --bg-secondary: 21 21 32;
+    --bg-tertiary: 30 30 46;
+    --bg-accent: 37 37 53;
+    
+    --text-primary: 248 250 252;
+    --text-secondary: 203 213 225;
+    --text-tertiary: 148 163 184;
+    --text-muted: 100 116 139;
 
-    /* Sidebar colors for dark */
-    --sidebar-background: 15 15 35;
+    /* Priority colors */
+    --priority-high: 255 71 87;
+    --priority-high-bg: 255 71 87 / 0.1;
+    --priority-medium: 255 167 38;
+    --priority-medium-bg: 255 167 38 / 0.1;
+    --priority-low: 102 187 106;
+    --priority-low-bg: 102 187 106 / 0.1;
+
+    /* Category colors */
+    --category-work: 139 92 246;
+    --category-personal: 6 182 212;
+    --category-health: 16 185 129;
+    --category-finance: 245 158 11;
+    --category-learning: 59 130 246;
+    --category-social: 236 72 153;
+
+    /* Glass morphism */
+    --glass-bg: 255 255 255 / 0.03;
+    --glass-border: 255 255 255 / 0.1;
+
+    /* Sidebar colors */
+    --sidebar-background: 10 10 15;
     --sidebar-foreground: 148 163 184;
-    --sidebar-primary: 124 58 237;
+    --sidebar-primary: 99 102 241;
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 30 30 54;
+    --sidebar-accent: 30 30 46;
     --sidebar-accent-foreground: 203 213 225;
     --sidebar-border: 30 41 59;
-    --sidebar-ring: 124 58 237;
+    --sidebar-ring: 99 102 241;
   }
 }
 
@@ -107,28 +159,53 @@
 }
 
 @layer components {
-  /* Glass morphism utilities */
+  /* Enhanced glass morphism */
   .glass {
-    background: linear-gradient(145deg, hsl(255 255 255 / 0.1), hsl(255 255 255 / 0.03));
-    backdrop-filter: blur(12px) saturate(1.1);
-    -webkit-backdrop-filter: blur(12px) saturate(1.1);
-    border: 1px solid hsl(255 255 255 / 0.1);
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(16px) saturate(1.2);
+    -webkit-backdrop-filter: blur(16px) saturate(1.2);
+    border: 1px solid hsl(var(--glass-border));
     box-shadow: 
-      0 8px 32px hsl(0 0% 0% / 0.3),
-      0 1px 0 hsl(255 255 255 / 0.1) inset,
-      0 0 0 1px hsl(255 255 255 / 0.05) inset;
+      0 8px 32px hsl(0 0% 0% / 0.15),
+      0 1px 0 hsl(var(--glass-border)) inset;
   }
 
   .glass-card {
     @apply glass rounded-xl;
   }
 
+  /* Enhanced gradient system */
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(213 94% 68%) 100%);
+    background: linear-gradient(135deg, hsl(99 102 241) 0%, hsl(139 92 246) 50%, hsl(168 85 247) 100%);
   }
 
   .gradient-secondary {
-    background: linear-gradient(135deg, hsl(var(--primary) / 0.1) 0%, hsl(var(--accent) / 0.1) 100%);
+    background: linear-gradient(135deg, hsl(6 182 212) 0%, hsl(59 130 246) 100%);
+  }
+
+  .gradient-success {
+    background: linear-gradient(135deg, hsl(16 185 129) 0%, hsl(5 150 105) 100%);
+  }
+
+  .gradient-warning {
+    background: linear-gradient(135deg, hsl(245 158 11) 0%, hsl(217 119 6) 100%);
+  }
+
+  .gradient-danger {
+    background: linear-gradient(135deg, hsl(239 68 68) 0%, hsl(220 38 38) 100%);
+  }
+
+  /* Category gradients */
+  .gradient-work {
+    background: linear-gradient(135deg, hsl(139 92 246) 0%, hsl(124 58 237) 100%);
+  }
+
+  .gradient-personal {
+    background: linear-gradient(135deg, hsl(6 182 212) 0%, hsl(14 165 233) 100%);
+  }
+
+  .gradient-health {
+    background: linear-gradient(135deg, hsl(16 185 129) 0%, hsl(34 197 94) 100%);
   }
 
   /* Enhanced hover effects */
@@ -147,20 +224,75 @@
     box-shadow: 0 0 30px hsl(var(--primary) / 0.4);
   }
 
-  /* Task priority styles */
+  /* Enhanced priority styles */
   .priority-high {
     border-left: 4px solid hsl(var(--priority-high));
-    background: linear-gradient(90deg, hsl(var(--priority-high) / 0.05), transparent);
+    background: linear-gradient(90deg, hsl(var(--priority-high-bg)), transparent);
+    box-shadow: 0 0 20px hsl(var(--priority-high) / 0.1);
   }
 
   .priority-medium {
     border-left: 4px solid hsl(var(--priority-medium));
-    background: linear-gradient(90deg, hsl(var(--priority-medium) / 0.05), transparent);
+    background: linear-gradient(90deg, hsl(var(--priority-medium-bg)), transparent);
+    box-shadow: 0 0 20px hsl(var(--priority-medium) / 0.1);
   }
 
   .priority-low {
     border-left: 4px solid hsl(var(--priority-low));
-    background: linear-gradient(90deg, hsl(var(--priority-low) / 0.05), transparent);
+    background: linear-gradient(90deg, hsl(var(--priority-low-bg)), transparent);
+    box-shadow: 0 0 20px hsl(var(--priority-low) / 0.1);
+  }
+
+  /* Calendar styles */
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    background: hsl(var(--border));
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .calendar-day {
+    @apply bg-card p-2 min-h-[80px] relative;
+    transition: all 0.2s ease;
+  }
+
+  .calendar-day:hover {
+    @apply bg-muted/50;
+  }
+
+  .calendar-day.today {
+    @apply bg-primary/10 border-primary/20;
+    box-shadow: inset 0 0 0 1px hsl(var(--primary) / 0.2);
+  }
+
+  .calendar-day.other-month {
+    @apply text-muted-foreground bg-muted/20;
+  }
+
+  .task-indicator {
+    @apply w-2 h-2 rounded-full absolute;
+  }
+
+  .task-indicator.high-priority {
+    background: hsl(var(--priority-high));
+    box-shadow: 0 0 8px hsl(var(--priority-high) / 0.5);
+  }
+
+  .task-indicator.medium-priority {
+    background: hsl(var(--priority-medium));
+    box-shadow: 0 0 8px hsl(var(--priority-medium) / 0.5);
+  }
+
+  .task-indicator.low-priority {
+    background: hsl(var(--priority-low));
+    box-shadow: 0 0 8px hsl(var(--priority-low) / 0.5);
+  }
+
+  .task-indicator.completed {
+    background: hsl(var(--success));
+    box-shadow: 0 0 8px hsl(var(--success) / 0.5);
   }
 
   /* Custom scrollbar */

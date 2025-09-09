@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, BarChart3, ListTodo } from 'lucide-react';
+import { Plus, BarChart3, ListTodo, Calendar } from 'lucide-react';
 import { TaskForm } from '@/components/TaskForm';
 import { TaskList } from '@/components/TaskList';
 import { Header } from '@/components/Header';
 import { Dashboard } from '@/components/Dashboard';
+import { CalendarView } from '@/components/CalendarView';
 import { useTasks } from '@/hooks/useTasks';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
@@ -112,6 +113,13 @@ const Index = () => {
                 Dashboard
               </TabsTrigger>
               <TabsTrigger 
+                value="calendar"
+                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                <Calendar className="h-4 w-4" />
+                Calendar
+              </TabsTrigger>
+              <TabsTrigger 
                 value="tasks"
                 className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
               >
@@ -130,6 +138,18 @@ const Index = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <Dashboard tasks={tasks} />
+                </motion.div>
+              </TabsContent>
+
+              <TabsContent value="calendar" className="mt-6">
+                <motion.div
+                  key="calendar"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <CalendarView tasks={tasks} />
                 </motion.div>
               </TabsContent>
 
