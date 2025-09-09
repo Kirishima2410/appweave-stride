@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, BarChart3, ListTodo } from 'lucide-react';
+import { Plus, BarChart3, ListTodo, Calendar } from 'lucide-react';
 import { TaskForm } from '@/components/TaskForm';
 import { TaskList } from '@/components/TaskList';
+import { TaskFiltersComponent } from '@/components/TaskFilters';
 import { Header } from '@/components/Header';
 import { Dashboard } from '@/components/Dashboard';
+import { CalendarView } from '@/components/CalendarView';
 import { useTasks } from '@/hooks/useTasks';
+import { useTaskFilters } from '@/hooks/useTaskFilters';
 import { useAuth } from '@/hooks/useAuth';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -15,6 +18,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 const Index = () => {
   const { user, loading: authLoading } = useAuth();
   const { tasks, loading: tasksLoading, createTask, updateTask, deleteTask, toggleTaskComplete } = useTasks();
+  const { filters, setFilters, filteredTasks, categories } = useTaskFilters(tasks);
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('dashboard');
   const [showTaskForm, setShowTaskForm] = useState(false);
@@ -118,6 +122,13 @@ const Index = () => {
                 <ListTodo className="h-4 w-4" />
                 Tasks ({tasks.length})
               </TabsTrigger>
+              <TabsTrigger 
+                value="calendar"
+                className="flex items-center gap-2 data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+              >
+                <Calendar className="h-4 w-4" />
+                Calendar
+              </TabsTrigger>
             </TabsList>
 
             <AnimatePresence mode="wait">
@@ -141,11 +152,39 @@ const Index = () => {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <TaskList
+                  <div className="flex flex-col lg:flex-row gap-6">
+                    <div className="lg:w-80">
+                      <TaskFiltersComponent
+                        filters={filters}
+                        onFiltersChange={setFilters}
+                        categories={categories}
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <TaskList
+                        tasks={filteredTasks}
+                        onUpdate={updateTask}
+                        onDelete={deleteTask}
+                        onToggleComplete={toggleTaskComplete}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
+              </TabsContent>
+
+              <TabsContent value="calendar" className="mt-6">
+                <motion.div
+                  key="calendar"
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <CalendarView
                     tasks={tasks}
-                    onUpdate={updateTask}
-                    onDelete={deleteTask}
-                    onToggleComplete={toggleTaskComplete}
+                    onAddTask={createTask}
+                    onUpdateTask={updateTask}
+                    onDeleteTask={deleteTask}
                   />
                 </motion.div>
               </TabsContent>
