@@ -11,15 +11,14 @@ import { Plus, Sparkles } from 'lucide-react';
 interface TaskFormProps {
   onSubmit: (data: CreateTaskData) => Promise<void>;
   loading?: boolean;
-  defaultDueDate?: string;
 }
 
-export function TaskForm({ onSubmit, loading, defaultDueDate }: TaskFormProps) {
+export function TaskForm({ onSubmit, loading }: TaskFormProps) {
   const [formData, setFormData] = useState<CreateTaskData>({
     title: '',
     description: '',
     priority: 'medium',
-    due_date: defaultDueDate || '',
+    due_date: '',
     category: '',
   });
 
@@ -38,7 +37,7 @@ export function TaskForm({ onSubmit, loading, defaultDueDate }: TaskFormProps) {
         title: '',
         description: '',
         priority: 'medium',
-        due_date: defaultDueDate || '',
+        due_date: '',
         category: '',
       });
     } catch (error) {
