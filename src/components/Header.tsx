@@ -1,7 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { CheckSquare, LogOut, User } from 'lucide-react';
 import { useAuth } from '@/hooks/useAuth';
-import { ThemeToggle } from '@/components/ThemeToggle';
 
 export function Header() {
   const { user, signOut } = useAuth();
@@ -19,7 +18,6 @@ export function Header() {
         </div>
         
         <div className="flex items-center gap-2 sm:gap-4">
-          <ThemeToggle />
           {user && (
             <>
               <div className="hidden sm:flex items-center gap-2 text-sm text-muted-foreground">

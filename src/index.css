@@ -4,136 +4,70 @@
 
 @layer base {
   :root {
-    /* Light theme */
+    /* White, Red, Green, Yellow Color Palette */
     --background: 255 255 255;
-    --foreground: 15 23 42;
-    --card: 248 250 252;
-    --card-foreground: 15 23 42;
+    --foreground: 0 0 0;
+    --card: 255 255 255;
+    --card-foreground: 0 0 0;
     --popover: 255 255 255;
-    --popover-foreground: 15 23 42;
-    --primary: 99 102 241;
+    --popover-foreground: 0 0 0;
+    --primary: 220 38 38;
     --primary-foreground: 255 255 255;
-    --secondary: 241 245 249;
-    --secondary-foreground: 15 23 42;
-    --muted: 248 250 252;
-    --muted-foreground: 100 116 139;
-    --accent: 6 182 212;
-    --accent-foreground: 255 255 255;
-    --destructive: 239 68 68;
+    --secondary: 34 197 94;
+    --secondary-foreground: 255 255 255;
+    --muted: 250 250 250;
+    --muted-foreground: 64 64 64;
+    --accent: 234 179 8;
+    --accent-foreground: 0 0 0;
+    --destructive: 220 38 38;
     --destructive-foreground: 255 255 255;
-    --success: 16 185 129;
-    --warning: 245 158 11;
-    --border: 226 232 240;
-    --input: 226 232 240;
-    --ring: 99 102 241;
+    --success: 34 197 94;
+    --warning: 234 179 8;
+    --border: 229 229 229;
+    --input: 229 229 229;
+    --ring: 220 38 38;
     --radius: 0.75rem;
 
     /* Enhanced color system */
     --bg-primary: 255 255 255;
-    --bg-secondary: 248 250 252;
-    --bg-tertiary: 241 245 249;
-    --bg-accent: 226 232 240;
+    --bg-secondary: 254 254 254;
+    --bg-tertiary: 250 250 250;
+    --bg-accent: 245 245 245;
     
-    --text-primary: 15 23 42;
-    --text-secondary: 51 65 85;
-    --text-tertiary: 100 116 139;
-    --text-muted: 148 163 184;
+    --text-primary: 0 0 0;
+    --text-secondary: 64 64 64;
+    --text-tertiary: 115 115 115;
+    --text-muted: 163 163 163;
 
-    /* Priority colors */
-    --priority-high: 255 71 87;
-    --priority-high-bg: 255 71 87 / 0.1;
-    --priority-medium: 255 167 38;
-    --priority-medium-bg: 255 167 38 / 0.1;
-    --priority-low: 102 187 106;
-    --priority-low-bg: 102 187 106 / 0.1;
+    /* Priority colors - Red, Yellow, Green */
+    --priority-high: 220 38 38;
+    --priority-high-bg: 220 38 38 / 0.1;
+    --priority-medium: 234 179 8;
+    --priority-medium-bg: 234 179 8 / 0.1;
+    --priority-low: 34 197 94;
+    --priority-low-bg: 34 197 94 / 0.1;
 
-    /* Category colors */
-    --category-work: 139 92 246;
-    --category-personal: 6 182 212;
-    --category-health: 16 185 129;
-    --category-finance: 245 158 11;
-    --category-learning: 59 130 246;
-    --category-social: 236 72 153;
+    /* Category colors - using red, green, yellow variations */
+    --category-work: 220 38 38;
+    --category-personal: 34 197 94;
+    --category-health: 34 197 94;
+    --category-finance: 234 179 8;
+    --category-learning: 220 38 38;
+    --category-social: 234 179 8;
 
     /* Glass morphism */
-    --glass-bg: 255 255 255 / 0.7;
+    --glass-bg: 255 255 255 / 0.8;
     --glass-border: 0 0 0 / 0.1;
 
     /* Sidebar colors */
     --sidebar-background: 255 255 255;
-    --sidebar-foreground: 71 85 105;
-    --sidebar-primary: 99 102 241;
+    --sidebar-foreground: 64 64 64;
+    --sidebar-primary: 220 38 38;
     --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 241 245 249;
-    --sidebar-accent-foreground: 15 23 42;
-    --sidebar-border: 226 232 240;
-    --sidebar-ring: 99 102 241;
-  }
-
-  .dark {
-    /* Enhanced dark theme */
-    --background: 10 10 15;
-    --foreground: 248 250 252;
-    --card: 21 21 32;
-    --card-foreground: 248 250 252;
-    --popover: 30 30 46;
-    --popover-foreground: 248 250 252;
-    --primary: 99 102 241;
-    --primary-foreground: 255 255 255;
-    --secondary: 30 30 46;
-    --secondary-foreground: 203 213 225;
-    --muted: 26 30 50;
-    --muted-foreground: 148 163 184;
-    --accent: 6 182 212;
-    --accent-foreground: 255 255 255;
-    --destructive: 239 68 68;
-    --destructive-foreground: 255 255 255;
-    --success: 16 185 129;
-    --warning: 245 158 11;
-    --border: 30 41 59;
-    --input: 30 41 59;
-    --ring: 99 102 241;
-
-    /* Enhanced dark color system */
-    --bg-primary: 10 10 15;
-    --bg-secondary: 21 21 32;
-    --bg-tertiary: 30 30 46;
-    --bg-accent: 37 37 53;
-    
-    --text-primary: 248 250 252;
-    --text-secondary: 203 213 225;
-    --text-tertiary: 148 163 184;
-    --text-muted: 100 116 139;
-
-    /* Priority colors */
-    --priority-high: 255 71 87;
-    --priority-high-bg: 255 71 87 / 0.1;
-    --priority-medium: 255 167 38;
-    --priority-medium-bg: 255 167 38 / 0.1;
-    --priority-low: 102 187 106;
-    --priority-low-bg: 102 187 106 / 0.1;
-
-    /* Category colors */
-    --category-work: 139 92 246;
-    --category-personal: 6 182 212;
-    --category-health: 16 185 129;
-    --category-finance: 245 158 11;
-    --category-learning: 59 130 246;
-    --category-social: 236 72 153;
-
-    /* Glass morphism */
-    --glass-bg: 255 255 255 / 0.03;
-    --glass-border: 255 255 255 / 0.1;
-
-    /* Sidebar colors */
-    --sidebar-background: 10 10 15;
-    --sidebar-foreground: 148 163 184;
-    --sidebar-primary: 99 102 241;
-    --sidebar-primary-foreground: 255 255 255;
-    --sidebar-accent: 30 30 46;
-    --sidebar-accent-foreground: 203 213 225;
-    --sidebar-border: 30 41 59;
-    --sidebar-ring: 99 102 241;
+    --sidebar-accent: 250 250 250;
+    --sidebar-accent-foreground: 0 0 0;
+    --sidebar-border: 229 229 229;
+    --sidebar-ring: 220 38 38;
   }
 }
 
@@ -152,10 +86,7 @@
     scroll-behavior: smooth;
   }
 
-  /* Set dark mode as default */
-  html {
-    @apply dark;
-  }
+  /* Light mode only */
 }
 
 @layer components {
@@ -174,38 +105,38 @@
     @apply glass rounded-xl;
   }
 
-  /* Enhanced gradient system */
+  /* Enhanced gradient system - Red, Green, Yellow */
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(99 102 241) 0%, hsl(139 92 246) 50%, hsl(168 85 247) 100%);
+    background: linear-gradient(135deg, hsl(220 38 38) 0%, hsl(239 68 68) 100%);
   }
 
   .gradient-secondary {
-    background: linear-gradient(135deg, hsl(6 182 212) 0%, hsl(59 130 246) 100%);
+    background: linear-gradient(135deg, hsl(34 197 94) 0%, hsl(22 163 74) 100%);
   }
 
   .gradient-success {
-    background: linear-gradient(135deg, hsl(16 185 129) 0%, hsl(5 150 105) 100%);
+    background: linear-gradient(135deg, hsl(34 197 94) 0%, hsl(22 163 74) 100%);
   }
 
   .gradient-warning {
-    background: linear-gradient(135deg, hsl(245 158 11) 0%, hsl(217 119 6) 100%);
+    background: linear-gradient(135deg, hsl(234 179 8) 0%, hsl(202 138 4) 100%);
   }
 
   .gradient-danger {
-    background: linear-gradient(135deg, hsl(239 68 68) 0%, hsl(220 38 38) 100%);
+    background: linear-gradient(135deg, hsl(220 38 38) 0%, hsl(239 68 68) 100%);
   }
 
   /* Category gradients */
   .gradient-work {
-    background: linear-gradient(135deg, hsl(139 92 246) 0%, hsl(124 58 237) 100%);
+    background: linear-gradient(135deg, hsl(220 38 38) 0%, hsl(239 68 68) 100%);
   }
 
   .gradient-personal {
-    background: linear-gradient(135deg, hsl(6 182 212) 0%, hsl(14 165 233) 100%);
+    background: linear-gradient(135deg, hsl(34 197 94) 0%, hsl(22 163 74) 100%);
   }
 
   .gradient-health {
-    background: linear-gradient(135deg, hsl(16 185 129) 0%, hsl(34 197 94) 100%);
+    background: linear-gradient(135deg, hsl(34 197 94) 0%, hsl(22 163 74) 100%);
   }
 
   /* Enhanced hover effects */
