@@ -162,7 +162,7 @@ export function Dashboard({ tasks }: DashboardProps) {
           value={`${Math.round(stats.completionRate)}%`}
           subtitle={`${stats.completedTasks} completed`}
           icon={CheckCircle2}
-          gradient="bg-green-500"
+          gradient="gradient-success"
           progress={stats.completionRate}
         />
         
@@ -171,7 +171,7 @@ export function Dashboard({ tasks }: DashboardProps) {
           value={`${stats.todayCompleted}/${stats.todayTasks}`}
           subtitle={stats.todayTasks > 0 ? `${Math.round((stats.todayCompleted / stats.todayTasks) * 100)}% done` : 'No tasks today'}
           icon={Calendar}
-          gradient="bg-blue-500"
+          gradient="gradient-blue"
           progress={stats.todayTasks > 0 ? (stats.todayCompleted / stats.todayTasks) * 100 : 0}
         />
         
@@ -180,7 +180,7 @@ export function Dashboard({ tasks }: DashboardProps) {
           value={`${stats.weekCompleted}/${stats.weekTasks}`}
           subtitle={stats.weekTasks > 0 ? `${Math.round((stats.weekCompleted / stats.weekTasks) * 100)}% done` : 'No tasks this week'}
           icon={TrendingUp}
-          gradient="bg-purple-500"
+          gradient="gradient-purple"
           progress={stats.weekTasks > 0 ? (stats.weekCompleted / stats.weekTasks) * 100 : 0}
         />
       </div>
